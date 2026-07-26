@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8FAFC;
+    color: #1F2937;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.25;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F4EEFF;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #B48CFF;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6C4AB6;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/75 backdrop-blur-md border border-white/50 rounded-3xl shadow-glass;
+  }
+
+  .glass-card-dark {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-accent text-white font-semibold px-8 py-3 rounded-2xl shadow-violet-glow hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-primary font-semibold px-8 py-3 rounded-2xl border-2 border-primary/20 hover:border-primary hover:shadow-glass transition-all duration-300 cursor-pointer;
+  }
+
+  .btn-green {
+    @apply bg-gradient-to-r from-secondary to-secondary-light text-white font-semibold px-8 py-3 rounded-2xl shadow-green-glow hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 cursor-pointer;
+  }
+
+  .section-title {
+    @apply font-playfair text-4xl md:text-5xl font-bold text-textDark leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-primary font-semibold text-sm uppercase tracking-widest;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .gradient-text-green {
+    @apply bg-gradient-to-r from-secondary-dark to-secondary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+/* Custom focus styles */
+:focus-visible {
+  outline: 2px solid #6C4AB6;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Star rating */
+.star-filled {
+  color: #F59E0B;
+}
+
+/* Form input styles */
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: rgba(255,255,255,0.8);
+  border: 1.5px solid rgba(108, 74, 182, 0.15);
+  border-radius: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #1F2937;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #6C4AB6;
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 0 4px rgba(108, 74, 182, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9CA3AF;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4B5563;
+  margin-bottom: 0.5rem;
+}
+
+/* Carousel */
+.testimonial-carousel {
+  overflow: hidden;
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
