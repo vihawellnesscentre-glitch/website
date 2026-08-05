@@ -32,7 +32,16 @@ const counsellingServices = [
   { icon: Monitor, title: 'Online Counselling', desc: 'Confidential therapy sessions accessible from anywhere, anytime.' },
 ];
 
-const tabs = ['Homeopathy', 'Counselling'];
+const yogaServices = [
+  { icon: Heart, title: 'Therapeutic Yoga', desc: 'Customized yoga practices to support healing and physical well-being.' },
+  { icon: Wind, title: 'Yoga for Stress Management', desc: 'Techniques to reduce stress and promote relaxation.' },
+  { icon: Flower2, title: 'Mindfulness & Meditation', desc: 'Practices to cultivate present-moment awareness and mental clarity.' },
+  { icon: Activity, title: 'Breathwork (Pranayama)', desc: 'Breathing exercises to enhance vital energy and emotional balance.' },
+  { icon: Users, title: 'Corporate Yoga & Wellness', desc: 'Tailored sessions for employee health and workplace well-being.' },
+  { icon: Star, title: 'Yoga Classes', desc: 'Regular classes for holistic fitness and mind-body harmony.' },
+];
+
+const tabs = ['Homeopathy', 'Counselling', 'Yoga'];
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -43,8 +52,15 @@ const cardVariants = {
   }),
 };
 
-function ServiceCard({ service, index, isHomeopathy }) {
+function ServiceCard({ service, index, categoryIndex }) {
   const Icon = service.icon;
+  const styles = [
+    { bg: 'bg-lightGreen', text: 'text-secondary-dark', hoverBg: 'from-lightGreen/50', borderBg: 'from-secondary to-secondary-light' },
+    { bg: 'bg-lightViolet', text: 'text-primary', hoverBg: 'from-lightViolet/50', borderBg: 'from-primary to-accent' },
+    { bg: 'bg-orange-50', text: 'text-orange-500', hoverBg: 'from-orange-50/50', borderBg: 'from-orange-400 to-orange-500' }
+  ];
+  const s = styles[categoryIndex] || styles[0];
+
   return (
     <motion.div
       custom={index}
@@ -56,20 +72,14 @@ function ServiceCard({ service, index, isHomeopathy }) {
       className="group glass-card p-5 cursor-default relative overflow-hidden"
     >
       {/* Hover gradient */}
-      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl ${
-        isHomeopathy
-          ? 'bg-gradient-to-br from-lightGreen/50 to-transparent'
-          : 'bg-gradient-to-br from-lightViolet/50 to-transparent'
-      }`} />
+      <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl bg-gradient-to-br ${s.hoverBg} to-transparent`} />
 
       {/* Icon */}
       <motion.div
         whileHover={{ scale: 1.15, rotate: 5 }}
-        className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shadow-soft relative ${
-          isHomeopathy ? 'bg-lightGreen' : 'bg-lightViolet'
-        }`}
+        className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 shadow-soft relative ${s.bg}`}
       >
-        <Icon size={20} className={isHomeopathy ? 'text-secondary-dark' : 'text-primary'} />
+        <Icon size={20} className={s.text} />
       </motion.div>
 
       <h3 className="font-semibold text-textDark text-sm mb-1.5 group-hover:text-primary transition-colors relative">
@@ -78,9 +88,7 @@ function ServiceCard({ service, index, isHomeopathy }) {
       <p className="text-xs text-textMid leading-relaxed relative">{service.desc}</p>
 
       {/* Bottom accent line */}
-      <div className={`absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-b-3xl ${
-        isHomeopathy ? 'bg-gradient-to-r from-secondary to-secondary-light' : 'bg-gradient-to-r from-primary to-accent'
-      }`} />
+      <div className={`absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-b-3xl bg-gradient-to-r ${s.borderBg}`} />
     </motion.div>
   );
 }
@@ -90,8 +98,7 @@ export default function Services() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
-  const currentServices = activeTab === 0 ? homeopathyServices : counsellingServices;
-  const isHomeopathy = activeTab === 0;
+  const currentServices = activeTab === 0 ? homeopathyServices : activeTab === 1 ? counsellingServices : yogaServices;
 
   return (
     <section id="services" className="py-20 lg:py-28 bg-white relative overflow-hidden" aria-labelledby="services-heading">
@@ -138,12 +145,16 @@ export default function Services() {
                 {activeTab === i && (
                   <motion.div
                     layoutId="activeTab"
-                    className={`absolute inset-0 rounded-xl ${i === 0 ? 'bg-gradient-to-r from-secondary-dark to-secondary' : 'bg-gradient-primary'}`}
+                    className={`absolute inset-0 rounded-xl ${
+                      i === 0 ? 'bg-gradient-to-r from-secondary-dark to-secondary' 
+                      : i === 1 ? 'bg-gradient-primary' 
+                      : 'bg-gradient-to-r from-orange-500 to-orange-400'
+                    }`}
                     transition={{ type: 'spring', stiffness: 300, damping: 30 }}
                   />
                 )}
                 <span className="relative flex items-center gap-2">
-                  {i === 0 ? '🌿' : '🧠'} {tab}
+                  {i === 0 ? '🌿' : i === 1 ? '🧠' : '🧘‍♀️'} {tab}
                 </span>
               </button>
             ))}
@@ -166,7 +177,7 @@ export default function Services() {
                 key={service.title}
                 service={service}
                 index={i}
-                isHomeopathy={isHomeopathy}
+                categoryIndex={activeTab}
               />
             ))}
           </motion.div>
@@ -185,7 +196,7 @@ export default function Services() {
             className="btn-primary inline-flex items-center gap-2"
             id="services-book-cta"
           >
-            Book a {isHomeopathy ? 'Homeopathy' : 'Counselling'} Session
+            Book a {tabs[activeTab]} Session
           </a>
         </motion.div>
       </div>

@@ -49,31 +49,7 @@ function HeroIllustration() {
         <circle cx="250" cy="250" r="220" fill="url(#heroGrad1)" opacity="0.15" />
         <circle cx="250" cy="250" r="180" fill="url(#heroGrad2)" opacity="0.12" />
 
-        {/* Meditation figure */}
-        <motion.g
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          {/* Body */}
-          <ellipse cx="250" cy="340" rx="80" ry="28" fill="#6C4AB6" opacity="0.08" />
-          {/* Sitting legs */}
-          <path d="M185 330 Q210 360 250 358 Q290 360 315 330" stroke="#6C4AB6" strokeWidth="3" strokeLinecap="round" fill="none" />
-          {/* Torso */}
-          <rect x="228" y="245" width="44" height="90" rx="22" fill="url(#bodyGrad)" />
-          {/* Head */}
-          <circle cx="250" cy="225" r="32" fill="url(#skinGrad)" />
-          {/* Hair */}
-          <path d="M222 215 Q230 198 250 195 Q270 198 278 215" fill="#B48CFF" opacity="0.8" />
-          {/* Arms in meditation */}
-          <path d="M228 280 Q200 295 192 315" stroke="url(#bodyGrad)" strokeWidth="18" strokeLinecap="round" fill="none" />
-          <path d="M272 280 Q300 295 308 315" stroke="url(#bodyGrad)" strokeWidth="18" strokeLinecap="round" fill="none" />
-          {/* Hands mudra left */}
-          <circle cx="192" cy="315" r="9" fill="url(#skinGrad)" />
-          {/* Hands mudra right */}
-          <circle cx="308" cy="315" r="9" fill="url(#skinGrad)" />
-          {/* Third eye / aura dot */}
-          <circle cx="250" cy="218" r="4" fill="#B48CFF" opacity="0.9" />
-        </motion.g>
+
 
         {/* Lotus flower at base */}
         <motion.g
@@ -268,7 +244,6 @@ export default function Hero() {
               custom={1}
               className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-textDark leading-tight"
             >
-              Welcome to{' '}
               <span className="gradient-text">ViHa</span>{' '}
               <span className="text-secondary-dark">Wellness</span>
             </motion.h1>
@@ -281,6 +256,7 @@ export default function Hero() {
               custom={2}
               className="text-lg sm:text-xl text-primary font-semibold"
             >
+              Your Partner in Mind and Holistic Health.<br/>
               Holistic Care for a Healthier Mind and Body
             </motion.p>
 
