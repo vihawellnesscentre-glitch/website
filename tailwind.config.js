@@ -8,9 +8,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#6C4AB6',
-          light: '#8B6FD4',
-          dark: '#5239A0',
+          DEFAULT: '#069494',
+          light: '#0AA9A9',
+          dark: '#046B6B',
         },
         secondary: {
           DEFAULT: '#7ED957',
@@ -18,9 +18,9 @@ export default {
           dark: '#5CB83A',
         },
         accent: {
-          DEFAULT: '#B48CFF',
-          light: '#CAAEFF',
-          dark: '#9066E0',
+          DEFAULT: '#07B5B5',
+          light: '#35C7C7',
+          dark: '#058282',
         },
         background: '#F8FAFC',
         surface: 'rgba(255,255,255,0.75)',
@@ -28,7 +28,7 @@ export default {
         textMid: '#4B5563',
         textLight: '#9CA3AF',
         lightGreen: '#E9F9EF',
-        lightViolet: '#F4EEFF',
+        lightTeal: '#E0F4F4',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
@@ -48,10 +48,10 @@ export default {
         xl: '24px',
       },
       boxShadow: {
-        glass: '0 8px 32px rgba(108, 74, 182, 0.12)',
-        'glass-lg': '0 20px 60px rgba(108, 74, 182, 0.15)',
+        glass: '0 8px 32px rgba(6, 148, 148, 0.12)',
+        'glass-lg': '0 20px 60px rgba(6, 148, 148, 0.15)',
         'green-glow': '0 8px 32px rgba(126, 217, 87, 0.2)',
-        'violet-glow': '0 8px 32px rgba(108, 74, 182, 0.25)',
+        'teal-glow': '0 8px 32px rgba(6, 148, 148, 0.25)',
         soft: '0 4px 20px rgba(0,0,0,0.06)',
         'soft-lg': '0 10px 40px rgba(0,0,0,0.08)',
       },
@@ -76,10 +76,10 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-primary': 'linear-gradient(135deg, #6C4AB6 0%, #B48CFF 100%)',
+        'gradient-primary': 'linear-gradient(135deg, #069494 0%, #07B5B5 100%)',
         'gradient-secondary': 'linear-gradient(135deg, #7ED957 0%, #B5F27B 100%)',
-        'gradient-hero': 'linear-gradient(135deg, #F4EEFF 0%, #E9F9EF 100%)',
-        'gradient-card': 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(244,238,255,0.6) 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #E0F4F4 0%, #E9F9EF 100%)',
+        'gradient-card': 'linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(224, 244, 244,0.6) 100%)',
       },
     },
   },

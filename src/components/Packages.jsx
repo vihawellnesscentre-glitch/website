@@ -44,7 +44,7 @@ const packages = [
       'Direct contact channel for participant queries',
       'Customized session topics based on needs',
     ],
-    accent: '#6C4AB6',
+    accent: '#069494',
   },
   {
     id: 'comprehensive',
@@ -55,7 +55,7 @@ const packages = [
     duration: 'Customized Ongoing Support',
     icon: '🏆',
     popular: false,
-    color: 'from-lightViolet to-purple-50',
+    color: 'from-lightTeal to-teal-50',
     border: 'border-accent/25',
     btnClass: 'btn-secondary',
     features: [
@@ -66,7 +66,7 @@ const packages = [
       'Regular awareness workshops & 1-on-1 consultations',
       'Long-term wellness strategy development',
     ],
-    accent: '#B48CFF',
+    accent: '#07B5B5',
   },
 ];
 
@@ -76,8 +76,8 @@ export default function Packages() {
 
   return (
     <section className="py-20 lg:py-28 bg-white relative overflow-hidden" aria-labelledby="packages-heading">
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-lightViolet/10 to-white" />
-      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#6C4AB6 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-lightTeal/10 to-white" />
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#069494 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Header */}

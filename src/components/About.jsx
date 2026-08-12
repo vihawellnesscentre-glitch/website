@@ -4,8 +4,8 @@ import { Leaf, Heart, Users, Shield, Sparkles } from 'lucide-react';
 
 const values = [
   { icon: Leaf, text: 'Holistic & Natural', color: 'text-secondary-dark', bg: 'bg-lightGreen' },
-  { icon: Heart, text: 'Compassionate Care', color: 'text-primary', bg: 'bg-lightViolet' },
-  { icon: Users, text: 'Patient-Centered', color: 'text-accent-dark', bg: 'bg-purple-50' },
+  { icon: Heart, text: 'Compassionate Care', color: 'text-primary', bg: 'bg-lightTeal' },
+  { icon: Users, text: 'Patient-Centered', color: 'text-accent-dark', bg: 'bg-teal-50' },
   { icon: Shield, text: 'Ethical Practice', color: 'text-secondary-dark', bg: 'bg-lightGreen' },
 ];
 
@@ -25,7 +25,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 lg:py-28 bg-white relative overflow-hidden" aria-labelledby="about-heading">
       {/* Decorative blobs */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-lightViolet rounded-full opacity-50 blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-lightTeal rounded-full opacity-50 blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-56 h-56 bg-lightGreen rounded-full opacity-50 blur-3xl translate-y-1/2 -translate-x-1/4" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +40,7 @@ export default function About() {
             {/* Outer glass container */}
             <div className="glass-card p-6 md:p-8 relative overflow-hidden shadow-glass-lg border border-white/60">
               {/* Background subtle gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-lightViolet/60 via-white to-lightGreen/50 opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-br from-lightTeal/60 via-white to-lightGreen/50 opacity-80" />
 
               <div className="relative z-10 space-y-6">
                 {/* Brand Logo Display Card */}
@@ -67,7 +67,7 @@ export default function About() {
                     whileHover={{ y: -4 }}
                     className="bg-white/80 backdrop-blur-sm p-4 rounded-2xl border border-white shadow-soft text-center"
                   >
-                    <div className="w-12 h-12 bg-lightViolet rounded-xl flex items-center justify-center mx-auto mb-2 text-2xl">
+                    <div className="w-12 h-12 bg-lightTeal rounded-xl flex items-center justify-center mx-auto mb-2 text-2xl">
                       🧠
                     </div>
                     <h4 className="font-semibold text-textDark text-sm">Psychological Counselling</h4>

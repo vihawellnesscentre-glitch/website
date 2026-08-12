@@ -65,18 +65,18 @@ function HeroIllustration() {
               rx="14"
               ry="6"
               transform={`rotate(${angle}, ${250 + 28 * Math.cos((angle * Math.PI) / 180)}, ${362 + 14 * Math.sin((angle * Math.PI) / 180)})`}
-              fill={i % 2 === 0 ? '#B48CFF' : '#7ED957'}
+              fill={i % 2 === 0 ? '#07B5B5' : '#7ED957'}
               opacity="0.75"
             />
           ))}
-          <circle cx="250" cy="362" r="10" fill="#F4EEFF" />
-          <circle cx="250" cy="362" r="5" fill="#6C4AB6" opacity="0.6" />
+          <circle cx="250" cy="362" r="10" fill="#E0F4F4" />
+          <circle cx="250" cy="362" r="5" fill="#069494" opacity="0.6" />
         </motion.g>
 
         {/* Floating leaves */}
         <FloatingIllustrationLeaf x={80} y={120} color="#7ED957" scale={1.2} delay={0} />
-        <FloatingIllustrationLeaf x={380} y={100} color="#6C4AB6" scale={1} delay={1.5} />
-        <FloatingIllustrationLeaf x={60} y={300} color="#B48CFF" scale={0.8} delay={0.8} />
+        <FloatingIllustrationLeaf x={380} y={100} color="#069494" scale={1} delay={1.5} />
+        <FloatingIllustrationLeaf x={60} y={300} color="#07B5B5" scale={0.8} delay={0.8} />
         <FloatingIllustrationLeaf x={400} y={280} color="#7ED957" scale={1.1} delay={2} />
 
         {/* Brain icon top */}
@@ -88,7 +88,7 @@ function HeroIllustration() {
           {/* Simplified brain outline */}
           <path
             d="M238 90 Q235 80 242 78 Q248 76 250 82 Q252 76 258 78 Q265 80 262 90 Q268 88 270 95 Q272 102 266 106 Q268 112 263 115 Q258 118 254 114 Q252 118 250 118 Q248 118 246 114 Q242 118 237 115 Q232 112 234 106 Q228 102 230 95 Q232 88 238 90Z"
-            fill="#6C4AB6" opacity="0.7"
+            fill="#069494" opacity="0.7"
           />
           <path d="M250 82 L250 118" stroke="white" strokeWidth="1.5" opacity="0.4" />
           <path d="M240 95 Q245 100 250 98 Q255 100 260 95" stroke="white" strokeWidth="1.2" fill="none" opacity="0.5" />
@@ -99,7 +99,7 @@ function HeroIllustration() {
           <motion.circle
             key={i}
             cx={x} cy={y} r={4}
-            fill={i % 3 === 0 ? '#7ED957' : i % 3 === 1 ? '#B48CFF' : '#6C4AB6'}
+            fill={i % 3 === 0 ? '#7ED957' : i % 3 === 1 ? '#07B5B5' : '#069494'}
             opacity={0.6}
             animate={{ scale: [0.8, 1.4, 0.8], opacity: [0.4, 0.9, 0.4] }}
             transition={{ duration: 3, repeat: Infinity, delay: i * 0.4 }}
@@ -109,23 +109,23 @@ function HeroIllustration() {
         {/* Gradient Defs */}
         <defs>
           <linearGradient id="heroGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#6C4AB6" />
-            <stop offset="100%" stopColor="#B48CFF" />
+            <stop offset="0%" stopColor="#069494" />
+            <stop offset="100%" stopColor="#07B5B5" />
           </linearGradient>
           <linearGradient id="heroGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#7ED957" />
             <stop offset="100%" stopColor="#B5F27B" />
           </linearGradient>
           <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#6C4AB6" />
-            <stop offset="100%" stopColor="#B48CFF" />
+            <stop offset="0%" stopColor="#069494" />
+            <stop offset="100%" stopColor="#07B5B5" />
           </linearGradient>
           <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#F5DEB3" />
             <stop offset="100%" stopColor="#DEBA8C" />
           </linearGradient>
           <radialGradient id="brainBg" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#F4EEFF" />
+            <stop offset="0%" stopColor="#E0F4F4" />
             <stop offset="100%" stopColor="#E9D8FF" />
           </radialGradient>
         </defs>
@@ -138,7 +138,7 @@ function HeroIllustration() {
         transition={{ delay: 0.8, duration: 0.6 }}
         className="absolute -left-2 sm:-left-4 top-1/3 glass-card px-4 py-3 flex items-center gap-3 shadow-glass"
       >
-        <div className="w-10 h-10 rounded-xl bg-lightViolet flex items-center justify-center text-xl">🧠</div>
+        <div className="w-10 h-10 rounded-xl bg-lightTeal flex items-center justify-center text-xl">🧠</div>
         <div>
           <p className="text-xs text-textLight font-medium">Mental Wellness</p>
           <p className="text-sm font-bold text-primary">Counselling</p>
@@ -215,7 +215,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: 'radial-gradient(circle, #6C4AB6 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, #069494 1px, transparent 1px)',
           backgroundSize: '40px 40px',
         }}
       />

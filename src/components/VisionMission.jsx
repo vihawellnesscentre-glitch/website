@@ -14,9 +14,9 @@ export default function VisionMission() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-br from-lightViolet via-white to-lightGreen relative overflow-hidden" aria-label="Vision and Mission">
+    <section className="py-20 lg:py-28 bg-gradient-to-br from-lightTeal via-white to-lightGreen relative overflow-hidden" aria-label="Vision and Mission">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#6C4AB6 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'radial-gradient(#069494 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -41,11 +41,11 @@ export default function VisionMission() {
             whileHover={{ y: -6 }}
             className="relative group glass-card p-8 lg:p-10 overflow-hidden"
           >
-            {/* Purple gradient background glow */}
+            {/* Teal gradient background glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl" />
 
             {/* Icon */}
-            <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-6 shadow-violet-glow">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-2xl flex items-center justify-center mb-6 shadow-teal-glow">
               <Eye size={28} className="text-white" />
             </div>
 

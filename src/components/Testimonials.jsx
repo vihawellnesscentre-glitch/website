@@ -11,8 +11,8 @@ const testimonials = [
     rating: 5,
     service: 'Homeopathy',
     avatar: 'PK',
-    color: '#6C4AB6',
-    bg: '#F4EEFF',
+    color: '#069494',
+    bg: '#E0F4F4',
   },
   {
     id: 2,
@@ -33,8 +33,8 @@ const testimonials = [
     rating: 5,
     service: 'Child Health',
     avatar: 'MS',
-    color: '#B48CFF',
-    bg: '#F4EEFF',
+    color: '#07B5B5',
+    bg: '#E0F4F4',
   },
   {
     id: 4,
@@ -44,8 +44,8 @@ const testimonials = [
     rating: 5,
     service: 'Student Counselling',
     avatar: 'AT',
-    color: '#6C4AB6',
-    bg: '#F4EEFF',
+    color: '#069494',
+    bg: '#E0F4F4',
   },
   {
     id: 5,
@@ -66,8 +66,8 @@ const testimonials = [
     rating: 5,
     service: 'Corporate Wellness',
     avatar: 'SK',
-    color: '#B48CFF',
-    bg: '#F4EEFF',
+    color: '#07B5B5',
+    bg: '#E0F4F4',
   },
 ];
 
@@ -105,7 +105,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-lightViolet/20 to-white relative overflow-hidden" aria-labelledby="testimonials-heading">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-lightTeal/20 to-white relative overflow-hidden" aria-labelledby="testimonials-heading">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#7ED957 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
 
@@ -173,7 +173,7 @@ export default function Testimonials() {
             <button
               onClick={prev}
               id="testimonial-prev"
-              className="w-10 h-10 rounded-2xl bg-white border border-gray-100 shadow-soft flex items-center justify-center hover:bg-lightViolet hover:border-primary/30 transition-all"
+              className="w-10 h-10 rounded-2xl bg-white border border-gray-100 shadow-soft flex items-center justify-center hover:bg-lightTeal hover:border-primary/30 transition-all"
               aria-label="Previous testimonial"
             >
               <ChevronLeft size={18} className="text-textMid" />
@@ -196,7 +196,7 @@ export default function Testimonials() {
             <button
               onClick={next}
               id="testimonial-next"
-              className="w-10 h-10 rounded-2xl bg-white border border-gray-100 shadow-soft flex items-center justify-center hover:bg-lightViolet hover:border-primary/30 transition-all"
+              className="w-10 h-10 rounded-2xl bg-white border border-gray-100 shadow-soft flex items-center justify-center hover:bg-lightTeal hover:border-primary/30 transition-all"
               aria-label="Next testimonial"
             >
               <ChevronRight size={18} className="text-textMid" />

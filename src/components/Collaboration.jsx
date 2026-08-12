@@ -4,7 +4,7 @@ import { School, GraduationCap, Building2, Users, ArrowRight, CheckCircle2 } fro
 
 const partners = [
   { icon: School, label: 'Schools & Colleges', color: 'bg-lightGreen', iconColor: 'text-secondary-dark', desc: 'Student mental health, parent & teacher awareness' },
-  { icon: Building2, label: 'Organizations & Corporates', color: 'bg-lightViolet', iconColor: 'text-primary', desc: 'Employee assistance & corporate wellness sessions' },
+  { icon: Building2, label: 'Organizations & Corporates', color: 'bg-lightTeal', iconColor: 'text-primary', desc: 'Employee assistance & corporate wellness sessions' },
   { icon: Users, label: 'Communities', color: 'bg-blue-50', iconColor: 'text-blue-600', desc: 'Mental health awareness & preventive care' },
 ];
 
@@ -24,11 +24,11 @@ export default function Collaboration() {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="collaborations" className="py-20 lg:py-28 bg-gradient-to-b from-lightViolet/30 to-white relative overflow-hidden" aria-labelledby="collab-heading">
+    <section id="collaborations" className="py-20 lg:py-28 bg-gradient-to-b from-lightTeal/30 to-white relative overflow-hidden" aria-labelledby="collab-heading">
       {/* Decorative background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
-      <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(#6C4AB6 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
+      <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(#069494 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Header */}
@@ -119,7 +119,7 @@ export default function Collaboration() {
             <motion.div
               whileHover={{ scale: 1.01 }}
               className="relative overflow-hidden rounded-3xl p-8 text-white"
-              style={{ background: 'linear-gradient(135deg, #6C4AB6 0%, #B48CFF 60%, #7ED957 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #069494 0%, #07B5B5 60%, #7ED957 100%)' }}
             >
               <h3 className="font-playfair text-2xl font-bold mb-2 relative">
                 Partner With ViHa Wellness
@@ -128,8 +128,9 @@ export default function Collaboration() {
                 Connect with us to design a custom wellness program tailored for your school, college, or workplace.
               </p>
               <a
-                href="#contact"
-                onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
+                href={import.meta.env.VITE_PARTNER_FORM_LINK || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-white text-primary font-semibold px-6 py-3 rounded-2xl hover:shadow-lg transition-all relative"
                 id="partner-cta"
               >

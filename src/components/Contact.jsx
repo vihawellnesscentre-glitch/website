@@ -11,7 +11,7 @@ const contactCards = [
     subtext: 'Call or message us directly',
     iconBg: 'bg-primary',
     action: 'tel:+916382685351',
-    gradient: 'from-lightViolet to-purple-50',
+    gradient: 'from-lightTeal to-teal-50',
   },
   {
     id: 'email',
@@ -30,7 +30,7 @@ const contactCards = [
     lines: ['Mon – Sat: 9:00 AM – 8:00 PM', 'Sunday: By Prior Appointment'],
     subtext: 'All consultations offered online',
     iconBg: 'bg-accent',
-    gradient: 'from-purple-50 to-lightViolet',
+    gradient: 'from-teal-50 to-lightTeal',
   },
 ];
 
@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 lg:py-28 bg-white relative overflow-hidden" aria-labelledby="contact-heading">
       {/* Decorative blobs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-lightViolet to-lightGreen rounded-full opacity-30 blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-lightTeal to-lightGreen rounded-full opacity-30 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Header */}
@@ -127,7 +127,7 @@ export default function Contact() {
           <div className="grid md:grid-cols-3 gap-4">
             {modes.map(({ icon: Icon, name, desc }) => (
               <div key={name} className="p-4 bg-white/80 rounded-2xl border border-gray-100 shadow-soft">
-                <div className="w-10 h-10 bg-lightViolet text-primary rounded-xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-10 h-10 bg-lightTeal text-primary rounded-xl flex items-center justify-center mx-auto mb-3">
                   <Icon size={20} />
                 </div>
                 <h4 className="text-sm font-semibold text-textDark mb-1">{name}</h4>

@@ -37,10 +37,10 @@ const experts = [
     name: 'Vanitha Rani S',
     role: 'Counselling Psychologist',
     initials: 'VR',
-    accentColor: '#6C4AB6',
-    bgLight: '#F4EEFF',
+    accentColor: '#069494',
+    bgLight: '#E0F4F4',
     borderColor: 'border-primary/25',
-    tagBg: 'bg-lightViolet',
+    tagBg: 'bg-lightTeal',
     tagText: 'text-primary',
     btnClass: 'btn-primary',
     quote: 'I believe that healing begins when people feel genuinely heard, understood, and supported.',
@@ -185,7 +185,7 @@ export default function Experts() {
   return (
     <section
       id="experts"
-      className="py-20 lg:py-28 bg-gradient-to-b from-white to-lightViolet/20 relative overflow-hidden"
+      className="py-20 lg:py-28 bg-gradient-to-b from-white to-lightTeal/20 relative overflow-hidden"
       aria-labelledby="experts-heading"
     >
       <div

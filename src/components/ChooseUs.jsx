@@ -8,8 +8,8 @@ const reasons = [
     title: 'Personalized Care',
     description: 'Tailored healthcare plans designed specifically for your unique physical and emotional needs.',
     color: 'text-primary',
-    bg: 'bg-lightViolet',
-    accent: '#6C4AB6',
+    bg: 'bg-lightTeal',
+    accent: '#069494',
   },
   {
     icon: Heart,
@@ -24,8 +24,8 @@ const reasons = [
     title: 'Holistic Approach to Wellness',
     description: 'Integrating homeopathic care and psychological counselling to treat both mind and body together.',
     color: 'text-primary',
-    bg: 'bg-lightViolet',
-    accent: '#6C4AB6',
+    bg: 'bg-lightTeal',
+    accent: '#069494',
   },
   {
     icon: Award,
@@ -40,8 +40,8 @@ const reasons = [
     title: 'Evidence-Informed Care',
     description: 'Combining proven therapeutic techniques and holistic principles for effective long-term healing.',
     color: 'text-primary',
-    bg: 'bg-lightViolet',
-    accent: '#6C4AB6',
+    bg: 'bg-lightTeal',
+    accent: '#069494',
   },
   {
     icon: Monitor,
@@ -56,8 +56,8 @@ const reasons = [
     title: 'Professional Care at Reasonable Fees',
     description: 'High-quality, compassionate healthcare made accessible with fair and affordable pricing.',
     color: 'text-primary',
-    bg: 'bg-lightViolet',
-    accent: '#6C4AB6',
+    bg: 'bg-lightTeal',
+    accent: '#069494',
   },
 ];
 
@@ -68,7 +68,7 @@ export default function ChooseUs() {
   return (
     <section className="py-20 lg:py-28 bg-white relative overflow-hidden" aria-labelledby="choose-heading">
       {/* Background blobs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-lightViolet to-lightGreen rounded-full opacity-20 blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-lightTeal to-lightGreen rounded-full opacity-20 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}

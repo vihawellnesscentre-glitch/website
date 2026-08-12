@@ -56,7 +56,7 @@ function ServiceCard({ service, index, categoryIndex }) {
   const Icon = service.icon;
   const styles = [
     { bg: 'bg-lightGreen', text: 'text-secondary-dark', hoverBg: 'from-lightGreen/50', borderBg: 'from-secondary to-secondary-light' },
-    { bg: 'bg-lightViolet', text: 'text-primary', hoverBg: 'from-lightViolet/50', borderBg: 'from-primary to-accent' },
+    { bg: 'bg-lightTeal', text: 'text-primary', hoverBg: 'from-lightTeal/50', borderBg: 'from-primary to-accent' },
     { bg: 'bg-orange-50', text: 'text-orange-500', hoverBg: 'from-orange-50/50', borderBg: 'from-orange-400 to-orange-500' }
   ];
   const s = styles[categoryIndex] || styles[0];
@@ -103,7 +103,7 @@ export default function Services() {
   return (
     <section id="services" className="py-20 lg:py-28 bg-white relative overflow-hidden" aria-labelledby="services-heading">
       {/* Decorations */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-lightViolet rounded-full opacity-40 blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-lightTeal rounded-full opacity-40 blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-lightGreen rounded-full opacity-40 blur-3xl translate-x-1/2 translate-y-1/2" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>

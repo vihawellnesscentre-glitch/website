@@ -153,7 +153,7 @@ export default function Footer() {
             <a
               href="#appointment"
               onClick={(e) => { e.preventDefault(); scrollTo('#appointment'); }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white text-sm font-semibold px-5 py-2.5 rounded-2xl hover:shadow-violet-glow hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-accent text-white text-sm font-semibold px-5 py-2.5 rounded-2xl hover:shadow-teal-glow hover:-translate-y-0.5 transition-all"
               id="footer-book-cta"
             >
               Book Appointment
@@ -192,7 +192,7 @@ export default function Footer() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         whileHover={{ scale: 1.1 }}
-        className="fixed bottom-6 right-6 w-11 h-11 bg-gradient-primary text-white rounded-2xl shadow-violet-glow flex items-center justify-center z-40"
+        className="fixed bottom-6 right-6 w-11 h-11 bg-gradient-primary text-white rounded-2xl shadow-teal-glow flex items-center justify-center z-40"
         aria-label="Scroll to top"
         id="scroll-to-top"
       >

@@ -80,7 +80,7 @@ export default function Appointment() {
       {/* Background blobs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/8 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/8 rounded-full blur-3xl" />
-      <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(#6C4AB6 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+      <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: 'radial-gradient(#069494 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
         {/* Header */}
@@ -305,7 +305,7 @@ export default function Appointment() {
                     htmlFor={`mode-${value}`}
                     className={`relative flex flex-col items-center p-3 rounded-2xl border-2 cursor-pointer transition-all ${
                       form.consultationMode === value
-                        ? 'border-primary bg-lightViolet'
+                        ? 'border-primary bg-lightTeal'
                         : 'border-gray-100 bg-white hover:border-primary/30'
                     }`}
                   >

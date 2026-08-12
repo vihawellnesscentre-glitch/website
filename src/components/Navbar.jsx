@@ -91,8 +91,8 @@ export default function Navbar() {
                     onClick={(e) => { e.preventDefault(); scrollToSection(link.href); }}
                     className={`relative px-4 py-2 text-sm font-medium rounded-xl transition-all duration-300 ${
                       isActive
-                        ? 'text-primary bg-lightViolet'
-                        : 'text-textMid hover:text-primary hover:bg-lightViolet/60'
+                        ? 'text-primary bg-lightTeal'
+                        : 'text-textMid hover:text-primary hover:bg-lightTeal/60'
                     }`}
                   >
                     {link.name}
@@ -123,7 +123,7 @@ export default function Navbar() {
               {/* Hamburger */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden p-2 rounded-xl text-textMid hover:text-primary hover:bg-lightViolet transition-all"
+                className="lg:hidden p-2 rounded-xl text-textMid hover:text-primary hover:bg-lightTeal transition-all"
                 aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={mobileOpen}
               >
@@ -157,7 +157,7 @@ export default function Navbar() {
                 <img src="/viha.png" alt="ViHa Wellness" className="h-10 w-auto" />
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="p-2 rounded-xl text-textMid hover:text-primary hover:bg-lightViolet transition-all"
+                  className="p-2 rounded-xl text-textMid hover:text-primary hover:bg-lightTeal transition-all"
                   aria-label="Close menu"
                 >
                   <X size={20} />
@@ -179,8 +179,8 @@ export default function Navbar() {
                       transition={{ delay: i * 0.05 }}
                       className={`flex items-center px-4 py-3 rounded-2xl text-sm font-medium transition-all ${
                         isActive
-                          ? 'bg-lightViolet text-primary font-semibold'
-                          : 'text-textMid hover:bg-lightViolet/60 hover:text-primary'
+                          ? 'bg-lightTeal text-primary font-semibold'
+                          : 'text-textMid hover:bg-lightTeal/60 hover:text-primary'
                       }`}
                     >
                       {link.name}
