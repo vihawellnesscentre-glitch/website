@@ -28,62 +28,28 @@ export default function MapSection() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
-            {/* Map 1: Tenkasi */}
-            <div>
-              <div className="p-3 flex justify-between items-center bg-white/50">
-                <p className="text-sm font-semibold text-textDark">Tenkasi Clinic</p>
-                <a
-                  href="https://maps.google.com/maps?q=Tenkasi,%20Tamil%20Nadu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-primary font-medium hover:underline"
-                >
-                  Open Maps <ExternalLink size={12} />
-                </a>
-              </div>
-              <div className="relative w-full" style={{ height: 350 }}>
-                <iframe
-                  title="Tenkasi Location"
-                  src="https://maps.google.com/maps?q=Tenkasi,%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="350"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale-[20%] hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
-
-            {/* Map 2: Sivakasi */}
-            <div>
-              <div className="p-3 flex justify-between items-center bg-white/50">
-                <p className="text-sm font-semibold text-textDark">Sivakasi Clinic</p>
-                <a
-                  href="https://maps.google.com/maps?q=Sivakasi,%20Tamil%20Nadu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-primary font-medium hover:underline"
-                >
-                  Open Maps <ExternalLink size={12} />
-                </a>
-              </div>
-              <div className="relative w-full" style={{ height: 350 }}>
-                <iframe
-                  title="Sivakasi Location"
-                  src="https://maps.google.com/maps?q=Sivakasi,%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
-                  width="100%"
-                  height="350"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="grayscale-[20%] hover:grayscale-0 transition-all duration-500"
-                />
-              </div>
-            </div>
+          <div className="relative w-full" style={{ height: 350 }}>
+            <iframe
+              title="ViHa Wellness Location"
+              src="https://maps.google.com/maps?q=Tenkasi,%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="350"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+            />
+            {/* Overlay badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={inView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ delay: 0.5 }}
+              className="absolute bottom-4 left-4 glass-card px-4 py-2 flex items-center gap-2 text-sm font-medium text-primary shadow-glass"
+            >
+              <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" />
+              Available Online Nationwide
+            </motion.div>
           </div>
         </motion.div>
       </div>

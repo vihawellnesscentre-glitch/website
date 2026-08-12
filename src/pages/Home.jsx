@@ -12,6 +12,7 @@ import Testimonials from '../components/Testimonials';
 import Appointment from '../components/Appointment';
 import Contact from '../components/Contact';
 import MapSection from '../components/MapSection';
+import Partners from '../components/Partners';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
         <Appointment />
         <Contact />
         <MapSection />
+        <Partners />
       </main>
       <Footer />
     </div>

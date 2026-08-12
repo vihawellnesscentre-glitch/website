@@ -175,12 +175,6 @@ export default function Footer() {
             <p className="text-gray-400 text-xs">
               © {new Date().getFullYear()} ViHa Wellness. All rights reserved.
             </p>
-            <p className="text-xs text-gray-500 font-medium">
-              Official Partner: <span className="text-secondary font-semibold">Jeyam Health</span>
-            </p>
-            <p className="text-xs text-gray-500 font-medium">
-              Built by: <span className="text-secondary font-semibold">Xpertio Technologies</span>
-            </p>
           </div>
           <div className="flex items-center gap-4 text-xs text-gray-500">
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollTo('#home'); }} className="hover:text-white transition-colors">Privacy Policy</a>
