@@ -91,7 +91,7 @@ export const submitContact = async (data) => {
  * Copy and paste this entirely into your script.google.com project:
  *
  
-const EMAIL_RECIPIENTS = "harinisanthiya01@gmail.com,vanitharani97@gmail.com";
+const EMAIL_RECIPIENTS = "harinisanthiya01@gmail.com,s.vanitharani97@gmail.com,vihawellnesscentre@gmail.com";
 
 function doPost(e) {
   try {

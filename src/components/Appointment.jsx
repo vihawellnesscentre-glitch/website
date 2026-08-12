@@ -72,7 +72,6 @@ export default function Appointment() {
       setStatus('error');
       setMessage(result.message);
     }
-    setTimeout(() => setStatus('idle'), 6000);
   };
 
   return (
@@ -122,263 +121,277 @@ export default function Appointment() {
           {/* Top gradient bar */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary rounded-t-3xl" />
 
-          {/* Success/Error messages */}
-          {status === 'success' && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-start gap-3 p-4 bg-lightGreen border border-secondary/30 rounded-2xl mb-6"
+          {status === 'success' ? (
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="py-16 flex flex-col items-center justify-center text-center"
             >
-              <CheckCircle2 size={20} className="text-secondary-dark flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-textDark font-medium">{message}</p>
-            </motion.div>
-          )}
-          {status === 'error' && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-2xl mb-6"
-            >
-              <AlertCircle size={20} className="text-red-500 flex-shrink-0 mt-0.5" />
-              <p className="text-sm text-red-700">{message}</p>
-            </motion.div>
-          )}
-
-          <form onSubmit={handleSubmit} noValidate>
-            {/* Row 1 - Name, Phone */}
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="form-label" htmlFor="appt-fullName">Full Name *</label>
-                <input
-                  id="appt-fullName"
-                  name="fullName"
-                  type="text"
-                  required
-                  placeholder="Your full name"
-                  value={form.fullName}
-                  onChange={handleChange}
-                  className="form-input"
-                />
+              <div className="w-20 h-20 bg-lightGreen rounded-full flex items-center justify-center mb-6">
+                <CheckCircle2 size={40} className="text-secondary-dark" />
               </div>
-              <div>
-                <label className="form-label" htmlFor="appt-phone">Phone Number *</label>
-                <input
-                  id="appt-phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  placeholder="+91 XXXXX XXXXX"
-                  value={form.phone}
-                  onChange={handleChange}
-                  className="form-input"
-                />
-              </div>
-            </div>
-
-            {/* Row 2 - Email, Age */}
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="form-label" htmlFor="appt-email">Email Address *</label>
-                <input
-                  id="appt-email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="your@email.com"
-                  value={form.email}
-                  onChange={handleChange}
-                  className="form-input"
-                />
-              </div>
-              <div>
-                <label className="form-label" htmlFor="appt-age">Age</label>
-                <input
-                  id="appt-age"
-                  name="age"
-                  type="number"
-                  min="1"
-                  max="120"
-                  placeholder="Your age"
-                  value={form.age}
-                  onChange={handleChange}
-                  className="form-input"
-                />
-              </div>
-            </div>
-
-            {/* Row 3 - Gender, Service */}
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="form-label" htmlFor="appt-gender">Gender</label>
-                <select
-                  id="appt-gender"
-                  name="gender"
-                  value={form.gender}
-                  onChange={handleChange}
-                  className="form-input"
-                >
-                  <option value="">Select gender</option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                  <option value="Prefer not to say">Prefer not to say</option>
-                </select>
-              </div>
-              <div>
-                <label className="form-label" htmlFor="appt-service">Service Required *</label>
-                <select
-                  id="appt-service"
-                  name="service"
-                  required
-                  value={form.service}
-                  onChange={handleChange}
-                  className="form-input"
-                >
-                  <option value="">Select a service</option>
-                  {services.map((s) => (
-                    <option key={s} value={s}>{s}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Row 4 - Doctor, Date */}
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label className="form-label" htmlFor="appt-doctor">Preferred Doctor</label>
-                <select
-                  id="appt-doctor"
-                  name="doctor"
-                  value={form.doctor}
-                  onChange={handleChange}
-                  className="form-input"
-                >
-                  <option value="">Select doctor</option>
-                  <option value="Dr. Harini Santhiya S">Dr. Harini Santhiya S (Homeopathy)</option>
-                  <option value="Vanitha Rani S">Vanitha Rani S (Counselling)</option>
-                </select>
-              </div>
-              <div>
-                <label className="form-label" htmlFor="appt-date">Preferred Date *</label>
-                <input
-                  id="appt-date"
-                  name="preferredDate"
-                  type="date"
-                  required
-                  min={new Date().toISOString().split('T')[0]}
-                  value={form.preferredDate}
-                  onChange={handleChange}
-                  className="form-input"
-                />
-              </div>
-            </div>
-
-            {/* Row 5 - Time */}
-            <div className="mb-4">
-              <label className="form-label" htmlFor="appt-time">Preferred Time *</label>
-              <select
-                id="appt-time"
-                name="preferredTime"
-                required
-                value={form.preferredTime}
-                onChange={handleChange}
-                className="form-input"
+              <h3 className="text-2xl font-playfair font-bold text-textDark mb-3">Appointment Requested!</h3>
+              <p className="text-textMid max-w-md mx-auto mb-8 text-lg">
+                {message || "Thank you! We've received your request and will contact you shortly to confirm."}
+              </p>
+              <button 
+                onClick={() => setStatus('idle')}
+                className="btn-primary px-8 py-3 rounded-xl"
               >
-                <option value="">Select time slot</option>
-                {timeSlots.map((t) => (
-                  <option key={t} value={t}>{t}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Consultation Mode */}
-            <div className="mb-4">
-              <label className="form-label">Consultation Mode *</label>
-              <div className="grid grid-cols-3 gap-3">
-                {[
-                  { value: 'online', label: '💻 Online Video', desc: 'Video call' },
-                  { value: 'video', label: '📱 Video Call', desc: 'WhatsApp/Zoom' },
-                  { value: 'tele', label: '📞 Tele Consultation', desc: 'Phone call' },
-                ].map(({ value, label, desc }) => (
-                  <label
-                    key={value}
-                    htmlFor={`mode-${value}`}
-                    className={`relative flex flex-col items-center p-3 rounded-2xl border-2 cursor-pointer transition-all ${
-                      form.consultationMode === value
-                        ? 'border-primary bg-lightTeal'
-                        : 'border-gray-100 bg-white hover:border-primary/30'
-                    }`}
-                  >
-                    <input
-                      id={`mode-${value}`}
-                      type="radio"
-                      name="consultationMode"
-                      value={value}
-                      checked={form.consultationMode === value}
-                      onChange={handleChange}
-                      className="sr-only"
-                    />
-                    <span className="text-sm font-medium text-textDark text-center">{label}</span>
-                    <span className="text-xs text-textLight">{desc}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            {/* Reason */}
-            <div className="mb-4">
-              <label className="form-label" htmlFor="appt-reason">Primary Reason for Consultation</label>
-              <input
-                id="appt-reason"
-                name="reason"
-                type="text"
-                placeholder="e.g., Chronic back pain, Anxiety, Skin allergy..."
-                value={form.reason}
-                onChange={handleChange}
-                className="form-input"
-              />
-            </div>
-
-            {/* Message */}
-            <div className="mb-6">
-              <label className="form-label" htmlFor="appt-message">Additional Message</label>
-              <textarea
-                id="appt-message"
-                name="message"
-                rows={3}
-                placeholder="Any additional details, previous medical history, or specific concerns..."
-                value={form.message}
-                onChange={handleChange}
-                className="form-input resize-none"
-              />
-            </div>
-
-            {/* Submit */}
-            <motion.button
-              type="submit"
-              disabled={status === 'loading'}
-              whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
-              whileTap={{ scale: status === 'loading' ? 1 : 0.98 }}
-              className="btn-primary w-full flex items-center justify-center gap-3 py-4 text-base disabled:opacity-70 disabled:cursor-not-allowed"
-              id="appointment-submit"
-            >
-              {status === 'loading' ? (
-                <>
-                  <Loader2 size={18} className="animate-spin" />
-                  Booking Your Appointment...
-                </>
-              ) : (
-                <>
-                  <Calendar size={18} />
-                  Confirm Appointment Request
-                </>
+                Book Another Appointment
+              </button>
+            </motion.div>
+          ) : (
+            <>
+              {/* Error messages */}
+              {status === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-3 p-4 bg-red-50 border border-red-200 rounded-2xl mb-6"
+                >
+                  <AlertCircle size={20} className="text-red-500 flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-red-700">{message}</p>
+                </motion.div>
               )}
-            </motion.button>
 
-            <p className="text-center text-xs text-textLight mt-3">
-              🔒 Your information is safe and confidential. We'll contact you within 24 hours.
-            </p>
-          </form>
+              <form onSubmit={handleSubmit} noValidate>
+                {/* Row 1 - Name, Phone */}
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="form-label" htmlFor="appt-fullName">Full Name *</label>
+                    <input
+                      id="appt-fullName"
+                      name="fullName"
+                      type="text"
+                      required
+                      placeholder="Your full name"
+                      value={form.fullName}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+                  <div>
+                    <label className="form-label" htmlFor="appt-phone">Phone Number *</label>
+                    <input
+                      id="appt-phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      placeholder="+91 XXXXX XXXXX"
+                      value={form.phone}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 2 - Email, Age */}
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="form-label" htmlFor="appt-email">Email Address *</label>
+                    <input
+                      id="appt-email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="your@email.com"
+                      value={form.email}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+                  <div>
+                    <label className="form-label" htmlFor="appt-age">Age</label>
+                    <input
+                      id="appt-age"
+                      name="age"
+                      type="number"
+                      min="1"
+                      max="120"
+                      placeholder="Your age"
+                      value={form.age}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 3 - Gender, Service */}
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="form-label" htmlFor="appt-gender">Gender</label>
+                    <select
+                      id="appt-gender"
+                      name="gender"
+                      value={form.gender}
+                      onChange={handleChange}
+                      className="form-input"
+                    >
+                      <option value="">Select gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                      <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="form-label" htmlFor="appt-service">Service Required *</label>
+                    <select
+                      id="appt-service"
+                      name="service"
+                      required
+                      value={form.service}
+                      onChange={handleChange}
+                      className="form-input"
+                    >
+                      <option value="">Select a service</option>
+                      {services.map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Row 4 - Doctor, Date */}
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label className="form-label" htmlFor="appt-doctor">Preferred Doctor</label>
+                    <select
+                      id="appt-doctor"
+                      name="doctor"
+                      value={form.doctor}
+                      onChange={handleChange}
+                      className="form-input"
+                    >
+                      <option value="">Select doctor</option>
+                      <option value="Dr. Harini Santhiya S">Dr. Harini Santhiya S (Homeopathy)</option>
+                      <option value="Vanitha Rani S">Vanitha Rani S (Counselling)</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="form-label" htmlFor="appt-date">Preferred Date *</label>
+                    <input
+                      id="appt-date"
+                      name="preferredDate"
+                      type="date"
+                      required
+                      min={new Date().toISOString().split('T')[0]}
+                      value={form.preferredDate}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+                </div>
+
+                {/* Row 5 - Time */}
+                <div className="mb-4">
+                  <label className="form-label" htmlFor="appt-time">Preferred Time *</label>
+                  <select
+                    id="appt-time"
+                    name="preferredTime"
+                    required
+                    value={form.preferredTime}
+                    onChange={handleChange}
+                    className="form-input"
+                  >
+                    <option value="">Select time slot</option>
+                    {timeSlots.map((t) => (
+                      <option key={t} value={t}>{t}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Consultation Mode */}
+                <div className="mb-4">
+                  <label className="form-label">Consultation Mode *</label>
+                  <div className="grid grid-cols-3 gap-3">
+                    {[
+                      { value: 'online', label: '💻 Online Video', desc: 'Video call' },
+                      { value: 'video', label: '📱 Video Call', desc: 'WhatsApp/Zoom' },
+                      { value: 'tele', label: '📞 Tele Consultation', desc: 'Phone call' },
+                    ].map(({ value, label, desc }) => (
+                      <label
+                        key={value}
+                        htmlFor={`mode-${value}`}
+                        className={`relative flex flex-col items-center p-3 rounded-2xl border-2 cursor-pointer transition-all ${
+                          form.consultationMode === value
+                            ? 'border-primary bg-lightTeal'
+                            : 'border-gray-100 bg-white hover:border-primary/30'
+                        }`}
+                      >
+                        <input
+                          id={`mode-${value}`}
+                          type="radio"
+                          name="consultationMode"
+                          value={value}
+                          checked={form.consultationMode === value}
+                          onChange={handleChange}
+                          className="sr-only"
+                        />
+                        <span className="text-sm font-medium text-textDark text-center">{label}</span>
+                        <span className="text-xs text-textLight">{desc}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Reason */}
+                <div className="mb-4">
+                  <label className="form-label" htmlFor="appt-reason">Primary Reason for Consultation</label>
+                  <input
+                    id="appt-reason"
+                    name="reason"
+                    type="text"
+                    placeholder="e.g., Chronic back pain, Anxiety, Skin allergy..."
+                    value={form.reason}
+                    onChange={handleChange}
+                    className="form-input"
+                  />
+                </div>
+
+                {/* Message */}
+                <div className="mb-6">
+                  <label className="form-label" htmlFor="appt-message">Additional Message</label>
+                  <textarea
+                    id="appt-message"
+                    name="message"
+                    rows={3}
+                    placeholder="Any additional details, previous medical history, or specific concerns..."
+                    value={form.message}
+                    onChange={handleChange}
+                    className="form-input resize-none"
+                  />
+                </div>
+
+                {/* Submit */}
+                <motion.button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  whileHover={{ scale: status === 'loading' ? 1 : 1.02 }}
+                  whileTap={{ scale: status === 'loading' ? 1 : 0.98 }}
+                  className="btn-primary w-full flex items-center justify-center gap-3 py-4 text-base disabled:opacity-70 disabled:cursor-not-allowed"
+                  id="appointment-submit"
+                >
+                  {status === 'loading' ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" />
+                      Booking Your Appointment...
+                    </>
+                  ) : (
+                    <>
+                      <Calendar size={18} />
+                      Confirm Appointment Request
+                    </>
+                  )}
+                </motion.button>
+
+                <p className="text-center text-xs text-textLight mt-3">
+                  🔒 Your information is safe and confidential. We'll contact you within 24 hours.
+                </p>
+              </form>
+            </>
+          )}
         </motion.div>
       </div>
     </section>
