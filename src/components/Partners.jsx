@@ -26,7 +26,7 @@ export default function Partners() {
             className="flex flex-col items-center p-6 bg-gray-50/80 border border-gray-100 rounded-3xl min-w-[260px] hover:shadow-soft transition-all"
           >
             <p className="text-xs text-textMid font-medium mb-3 uppercase tracking-wider">Official Partner</p>
-            <h3 className="text-xl font-bold text-primary font-playfair">Jeyam Health</h3>
+            <h3 className="text-xl font-bold text-primary font-playfair">Jeyam Health Care</h3>
           </motion.div>
 
           <motion.div
