@@ -8,6 +8,7 @@ const experts = [
     name: 'Dr. Harini Santhiya S',
     role: 'Homeopathic Physician',
     initials: 'HS',
+    image: '/dr-harini.jpeg',
     accentColor: '#7ED957',
     bgLight: '#E9F9EF',
     borderColor: 'border-secondary/25',
@@ -37,6 +38,7 @@ const experts = [
     name: 'Vanitha Rani S',
     role: 'Counselling Psychologist',
     initials: 'VR',
+    image: '/ms-vanitha.jpeg',
     accentColor: '#069494',
     bgLight: '#E0F4F4',
     borderColor: 'border-primary/25',
@@ -95,13 +97,21 @@ function ExpertCard({ expert, index, inView }) {
             className="w-24 h-24 rounded-full p-0.5 shadow-glass"
             style={{ background: `linear-gradient(135deg, ${expert.accentColor}, ${expert.accentColor}80)` }}
           >
-            <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-              <div
-                className="w-full h-full rounded-full flex items-center justify-center text-2xl font-bold font-playfair"
-                style={{ background: `${expert.accentColor}18`, color: expert.accentColor }}
-              >
-                {expert.initials}
-              </div>
+            <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+              {expert.image ? (
+                <img 
+                  src={expert.image} 
+                  alt={expert.name} 
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div
+                  className="w-full h-full rounded-full flex items-center justify-center text-2xl font-bold font-playfair"
+                  style={{ background: `${expert.accentColor}18`, color: expert.accentColor }}
+                >
+                  {expert.initials}
+                </div>
+              )}
             </div>
           </div>
           <div className="absolute bottom-1 right-1 w-4 h-4 bg-secondary rounded-full border-2 border-white" />
