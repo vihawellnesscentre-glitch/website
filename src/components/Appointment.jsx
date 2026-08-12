@@ -133,7 +133,7 @@ export default function Appointment() {
               </div>
               <h3 className="text-2xl font-playfair font-bold text-textDark mb-3">Appointment Requested!</h3>
               <p className="text-textMid max-w-md mx-auto mb-8 text-lg">
-                {message || "Thank you! We've received your request and will contact you shortly to confirm."}
+                You will receive confirmation within 30 mins.
               </p>
               <button 
                 onClick={() => setStatus('idle')}
