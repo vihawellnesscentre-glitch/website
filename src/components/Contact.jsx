@@ -35,7 +35,7 @@ const contactCards = [
 ];
 
 const modes = [
-  { icon: Laptop, name: 'Online Chat Support', desc: 'Secure web portal & virtual sessions' },
+  { icon: Laptop, name: 'Online Chat Support', desc: 'Text consulting' },
   { icon: PhoneCall, name: 'Tele Consultation', desc: 'Direct phone consultations' },
   { icon: Video, name: 'Video Consultation', desc: 'WhatsApp & Google Meet video calls' },
 ];

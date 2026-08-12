@@ -179,7 +179,7 @@ export default function Footer() {
               Official Partner: <span className="text-secondary font-semibold">Jeyam Health</span>
             </p>
             <p className="text-xs text-gray-500 font-medium">
-              Technology Partner: <span className="text-secondary font-semibold">Xpertio Technologies</span>
+              Built by: <span className="text-secondary font-semibold">Xpertio Technologies</span>
             </p>
           </div>
           <div className="flex items-center gap-4 text-xs text-gray-500">

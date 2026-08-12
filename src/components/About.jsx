@@ -88,19 +88,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Floating badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 }}
-              className="absolute -bottom-4 -right-2 glass-card px-4 py-3 flex items-center gap-3 shadow-glass border border-white"
-            >
-              <div className="w-9 h-9 rounded-xl bg-lightGreen flex items-center justify-center text-lg">✨</div>
-              <div>
-                <p className="text-xs font-bold text-textDark">Evidence-Informed</p>
-                <p className="text-[11px] text-textLight">Personalized Care</p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right - Content */}
