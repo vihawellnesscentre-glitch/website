@@ -171,9 +171,9 @@ function HeroIllustration() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute left-1/2 -translate-x-1/2 bottom-[12%] glass-card px-4 py-3 flex items-center gap-3 shadow-glass z-20"
+        className="absolute left-1/2 -translate-x-1/2 -bottom-4 sm:bottom-[5%] glass-card px-4 py-3 flex items-center gap-3 shadow-glass z-20 w-max max-w-[90vw]"
       >
-        <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-xl">🧘‍♀️</div>
+        <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-xl shrink-0">🧘‍♀️</div>
         <div>
           <p className="text-xs text-textLight font-medium">Physical Wellness</p>
           <p className="text-sm font-bold text-teal-600">Yoga</p>
