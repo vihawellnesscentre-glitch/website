@@ -38,6 +38,7 @@ const services = [
   'Self Esteem',
   'Corporate Counselling',
   'Online Counselling',
+  'Therapeutic Yoga & Mindfulness',
 ];
 
 const timeSlots = [
@@ -266,7 +267,7 @@ export default function Appointment() {
                     >
                       <option value="">Select doctor</option>
                       <option value="Dr. Harini Santhiya S">Dr. Harini Santhiya S (Homeopathy)</option>
-                      <option value="Vanitha Rani S">Vanitha Rani S (Counselling)</option>
+                      <option value="Vanitha Rani S">Vanitha Rani S (Yoga & Counselling)</option>
                     </select>
                   </div>
                   <div>

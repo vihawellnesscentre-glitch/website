@@ -43,8 +43,17 @@ function HeroIllustration() {
       transition={{ duration: 0.8, delay: 0.3 }}
       className="relative w-full max-w-lg mx-auto"
     >
+      {/* Blurred Logo Background inside the circle */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden rounded-full">
+        <img 
+          src="/viha.png" 
+          alt="" 
+          className="w-1/2 h-1/2 object-contain opacity-40 blur-[3px]"
+        />
+      </div>
+
       {/* Main SVG illustration */}
-      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto drop-shadow-2xl">
+      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto drop-shadow-2xl relative z-10">
         {/* Background circle */}
         <circle cx="250" cy="250" r="220" fill="url(#heroGrad1)" opacity="0.15" />
         <circle cx="250" cy="250" r="180" fill="url(#heroGrad2)" opacity="0.12" />
@@ -136,7 +145,7 @@ function HeroIllustration() {
         initial={{ opacity: 0, x: -30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.8, duration: 0.6 }}
-        className="absolute -left-2 sm:-left-4 top-1/3 glass-card px-4 py-3 flex items-center gap-3 shadow-glass"
+        className="absolute -left-2 sm:-left-4 top-[25%] glass-card px-4 py-3 flex items-center gap-3 shadow-glass z-20"
       >
         <div className="w-10 h-10 rounded-xl bg-lightTeal flex items-center justify-center text-xl">🧠</div>
         <div>
@@ -149,12 +158,25 @@ function HeroIllustration() {
         initial={{ opacity: 0, x: 30 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 0.6 }}
-        className="absolute -right-2 sm:-right-4 top-2/3 glass-card px-4 py-3 flex items-center gap-3 shadow-glass"
+        className="absolute -right-2 sm:-right-4 top-[50%] glass-card px-4 py-3 flex items-center gap-3 shadow-glass z-20"
       >
         <div className="w-10 h-10 rounded-xl bg-lightGreen flex items-center justify-center text-xl">🌿</div>
         <div>
           <p className="text-xs text-textLight font-medium">Homeopathy</p>
           <p className="text-sm font-bold text-secondary-dark">Holistic Care</p>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+        className="absolute left-1/2 -translate-x-1/2 bottom-[12%] glass-card px-4 py-3 flex items-center gap-3 shadow-glass z-20"
+      >
+        <div className="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-xl">🧘‍♀️</div>
+        <div>
+          <p className="text-xs text-textLight font-medium">Physical Wellness</p>
+          <p className="text-sm font-bold text-teal-600">Yoga</p>
         </div>
       </motion.div>
     </motion.div>

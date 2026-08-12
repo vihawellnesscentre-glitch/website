@@ -48,7 +48,7 @@ const experts = [
     quote: 'I believe that healing begins when people feel genuinely heard, understood, and supported.',
     description: [
       'My counselling approach is rooted in empathy, collaboration, and evidence-based psychological practices. I provide a safe, confidential, and non-judgmental space where individuals can explore their thoughts, emotions, and challenges while developing resilience, confidence, and emotional well-being.',
-      'My goal is to help individuals not only overcome life\'s difficulties but also discover their strengths, improve self-awareness, and build meaningful, fulfilling lives.',
+      'My goal is to help individuals not only overcome life\'s difficulties but also discover their strengths, improve self-awareness, and build meaningful, fulfilling lives. I also integrate Yoga and mindfulness practices to promote a powerful mind-body connection for holistic healing.',
     ],
     services: [
       'Individual Counselling',
@@ -62,6 +62,7 @@ const experts = [
       'Workplace & Corporate Counselling',
       'Employee Assistance Program (EAP)',
       'Emotional Well-being Coaching',
+      'Therapeutic Yoga & Mindfulness',
       'Online Counselling',
     ],
   },
