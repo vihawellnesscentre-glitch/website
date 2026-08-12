@@ -41,7 +41,7 @@ export default function MapSection() {
           <div className="relative w-full" style={{ height: 350 }}>
             <iframe
               title="ViHa Wellness Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125295.50640208788!2d78.0980573!3d9.9252007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c582b1189633%3A0xde92f00db1d085d0!2sMadurai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=Tenkasi,%20Tamil%20Nadu&t=&z=12&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="350"
               style={{ border: 0 }}
