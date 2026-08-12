@@ -307,7 +307,7 @@ export default function Appointment() {
                   <label className="form-label">Consultation Mode *</label>
                   <div className="grid grid-cols-3 gap-3">
                     {[
-                      { value: 'online', label: '💻 Online Video', desc: 'Video call' },
+                      { value: 'online', label: '💻 Online', desc: 'Text' },
                       { value: 'video', label: '📱 Video Call', desc: 'WhatsApp/Zoom' },
                       { value: 'tele', label: '📞 Tele Consultation', desc: 'Phone call' },
                     ].map(({ value, label, desc }) => (
